@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package hello;
+
+option go_package = "./grpc-unary/hello/proto";
+
+message HelloRequest {
+  string first_name = 1;
+}
+
+message HelloResponse {
+  string result = 1;
+}
+
+service HelloService {
+  rpc Hello(HelloRequest) returns (HelloResponse);
+};
